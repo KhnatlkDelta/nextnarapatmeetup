@@ -23,11 +23,13 @@
         bottom: 0;
         position: absolute;
         background-size: 1800% 1800%;
+        word-wrap: break-word; /* This will prevent the text from overflowing */
 
         -webkit-animation: rainbow 18s ease infinite;
         -z-animation: rainbow 18s ease infinite;
         -o-animation: rainbow 18s ease infinite;
         animation: rainbow 18s ease infinite;}
+
 
         @-webkit-keyframes rainbow {
             0%{background-position:0% 82%}
@@ -55,6 +57,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        word-wrap: break-word; /* This will prevent the text from overflowing */
     }
     .countdown {
         font-size: 1.5em;
@@ -66,6 +69,7 @@
         top: 80%;
         left: 50%;
         transform: translate(-50%, -50%);
+        word-wrap: break-word; /* This will prevent the text from overflowing */
     }
     footer p {
         font-size: 0.75em;
