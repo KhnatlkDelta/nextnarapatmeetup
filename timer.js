@@ -18,16 +18,15 @@ var countdown = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  minutes = minutes > 0 ? (minutes < 10 ? "0" : "") + minutes + " นาที " : "";
-  hours = hours > 0 ? (hours < 10 ? "0" : "") + hours + " ชั่วโมง " : "";
-  days = days > 0 ? (days < 10 ? "0" : "") + days + " วัน " : "";
-  months = months > 0 ? (months < 10 ? "0" : "") + months + " เดือน " : "";
-  years = years >= 1 ? years + " ปี " : "";
+  minutes = minutes > 0 ? (minutes < 10 ? "0" : "") + minutes + "m " : "";
+  hours = hours > 0 ? (hours < 10 ? "0" : "") + hours + "h " : "";
+  days = days > 0 ? (days < 10 ? "0" : "") + days + "D " : "";
+  months = months > 0 ? (months < 10 ? "0" : "") + months + "M " : "";
+  years = years >= 1 ? years + "Y " : "";
 
   // Format the countdown timer with leading zeros
   var formattedCountdown = 
-    years + months + days + hours + minutes + (seconds > 0 ? (seconds < 10 ? "0" + seconds : seconds) : "") + " วินาที";
-
+    (years + months + days + hours + minutes + (seconds >= 0 ? (seconds < 10 ? "0" + seconds : seconds) : "") + "s.") || "";
   // Display the countdown timer in the HTML element with id "countdown"
   document.getElementById("countdown").innerHTML = formattedCountdown;
 
